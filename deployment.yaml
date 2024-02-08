@@ -33,7 +33,7 @@ Resources:
                   - "logs:PutLogEvents"
                 Resource: "*"
             
-        - PolicyNAme: allowSqs
+        - PolicyName: allowSqs
           PolicyDocument:
             Version: "2012-10-17"
             Statement:
