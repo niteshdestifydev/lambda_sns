@@ -32,26 +32,6 @@ Resources:
                   - "logs:CreateLogStream"
                   - "logs:PutLogEvents"
                 Resource: "*"
-            
-        - PolicyName: allowSqs
-          PolicyDocument:
-            Version: "2012-10-17"
-            Statement:
-              - Effect: Allow
-                Action:
-                  - sqs:ReceiveMessage
-                  - sqs:DeleteMessage
-                  - sqs:GetQueueAttributes
-                  - sqs:ChangeMessageVisibility
-                Resource: !GetAtt sqsQueue.Arn
-      
-      LambdaFunctionEventSourceMapping:
-        Type: AWS::Lambda::EventSourceMapping
-        Properties:
-          BatchSize: 10
-          Enabled: true
-          EventSourceArn: !GetAtt queue.Arn
-          FunctionName: !GetAtt lambdaFunction.Arn
 
   lambdaFunction:
     Type: AWS::Lambda::Function
