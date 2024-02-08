@@ -6,11 +6,7 @@ Parameters:
     Description: Environment Name
     Type: String
 Resources: 
-  sqsQueue:
-    Type: AWS::SQS::Queue
-    Properties:
-      QueueName: !Sub lambda-cloudformation-demo-queue${Environment}
-      
+     
   lambdaFunctionIamRole:
     Type: AWS::IAM::Role
     Properties:
