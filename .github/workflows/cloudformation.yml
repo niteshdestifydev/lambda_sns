@@ -72,6 +72,7 @@ jobs:
           name: lambda-cloudformation-demo
           template: artifact/deployment.yaml
           parameter-overrides: "Environment=-Test"
+          no-fail-on-empty-changeset: "1"
       
   prod-deploy:
       runs-on: ubuntu-latest
@@ -97,4 +98,5 @@ jobs:
           name: lambda-cloudformation-demo-prod
           template: artifact/deployment.yaml
           parameter-overrides: "Environment=-Prod"
+          no-fail-on-empty-changeset: "1"
       
