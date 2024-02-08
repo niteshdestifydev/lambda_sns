@@ -31,8 +31,8 @@ Resources:
     Type: AWS::Lambda::Function
     Properties:
       Description: "CloudFormation Demo Lambda"
-      FunctionName: !Sub youtube-demo-cloudformation${Environment}
-      Handler: cloudformation-demo::cloudformation_demo.Function::FunctionHandler
+      FunctionName: !Sub lambda-cloudformation-demo${Environment}
+      Handler: lambda_sns::lambda_sns.Function::FunctionHandler
       MemorySize: 128
       Role: Fn::GetAtt:lambdaFunctionIamRole.Arn
       Runtime: dotnet6
